@@ -3,10 +3,10 @@
 constexpr int leds[] = { led1_pin, led2_pin, led3_pin };
 constexpr int led_count = sizeof(leds) / sizeof(leds[0]);
 
-constexpr int bounce[] = { 0, 1, 2, 3, 2, 1 };                    // sequence of bouncing leds
-constexpr int bounce_len = sizeof(bounce) / sizeof(bounce[0]);    // length of one bounce cycle
+constexpr int bounce[] = { 0, 1, 2, 3, 2, 1 };                      // sequence of bouncing leds
+constexpr int bounce_len = sizeof(bounce) / sizeof(bounce[0]);      // length of one bounce cycle
 
-constexpr unsigned long interval = 300;
+constexpr unsigned long interval = 300;                             // milliseconds
 
 static unsigned long start = 0;
 static unsigned long current = 0;
@@ -38,3 +38,4 @@ void loop() {
         led = (led + 1) % bounce_len;
     }
 }
+
