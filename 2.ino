@@ -1,4 +1,4 @@
-// The purpose of this program is to display value of counter in binary using four LED-s.
+// The purpose of this program is to display value of counter in binary using four LEDs.
 // Counter can be incremented/decremented using two buttons.
 // Each press of the button increments/decrements the counter.
 // If the button is held for 1 second (interval_1), the value of counter is incremented/decremented one more time.
@@ -20,6 +20,7 @@ constexpr int used_buttons_count = 2;
 static int counter = 0;
 
 
+// turns all LEDs off
 void init_led() {
     for (int i = 0; i < led_count; i++) {
         pinMode(leds[i], OUTPUT);
@@ -104,7 +105,7 @@ class Button {
         bool long_pressed = false;
 };
 
-Button buttons_used[] = {
+Button used_buttons[] = {
     Button(button1_pin, true),
     Button(button2_pin, false),
 };
@@ -112,6 +113,7 @@ Button buttons_used[] = {
 void setup() {
     init_led();
 
+    // initialize buttons
     for (auto button : buttons) {
         pinMode(button, INPUT);
     }
@@ -119,7 +121,7 @@ void setup() {
 
 void loop() {
     for (int i = 0; i < used_buttons_count; i++) {
-        buttons_used[i].Update();
+        used_buttons[i].Update();
     }
 }
 
