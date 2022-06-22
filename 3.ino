@@ -1,6 +1,6 @@
-// The purpose of this program is to keep a value of counter (mod 10 000) and display one digit of its value.
+// The purpose of this program is to keep a value of counter (mod 10 000) and display one digit of its value using 7-segment display.
 // Third button can be used to change the position of displayed digit (from right to left).
-// First and second button increments/decrements value of selected (currently displayed) digit.
+// First and second button increments/decrements value of the counter with respect to radix of selected (currently displayed) digit.
 
 #include <funshield.h>
 
