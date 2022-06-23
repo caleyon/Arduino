@@ -49,7 +49,7 @@ class Button {
             if (increments) {
                 counter = (counter + 1) & 15;           // % 2^n = & (2^n - 1)
             } else {
-                counter = (counter + 16 - 1) & 15;
+                counter = (counter + 16 - 1) & 15;      // % 16 = & 15
             }
 
             display_bin(counter);
@@ -64,7 +64,7 @@ class Button {
 
                 if (current_state == LOW) {
                     init_led();
-                    Change_counter();
+                    ChangeCounter();
                     start = millis();
                     pressed = true;
                     long_pressed = false;
@@ -78,7 +78,7 @@ class Button {
 
                 if (current - start >= interval_1) {
                     init_led();
-                    Change_counter();
+                    ChangeCounter();
                     start = millis();
                     long_pressed = true;
                 }
@@ -86,7 +86,7 @@ class Button {
             } else if (pressed && long_pressed) {
                 if (millis() - start >= interval_2) {
                     init_led();
-                    Change_counter();
+                    ChangeCounter();
                     start = millis();
                 }
             }
