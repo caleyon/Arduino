@@ -1,4 +1,6 @@
-#include "funshield.h"
+// This program will turn leds sequentially on and off in a "bouncing" manner.
+
+#include <funshield.h>
 
 constexpr int leds[] = { led1_pin, led2_pin, led3_pin };
 constexpr int led_count = sizeof(leds) / sizeof(leds[0]);
